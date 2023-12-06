@@ -50,7 +50,7 @@ MODEL_PATHS.forEach(model => {
 
 document.querySelector('#modelSelect').onchange = async () => {
   const modelName = document.querySelector('#modelSelect').value;
-  if (!modelName) return; // Do nothing if no model is selected
+  if (!modelName) return;
   try {
     const r = await fetch(modelName);
     const buffer = await r.arrayBuffer();
