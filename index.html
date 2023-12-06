@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8' />
+  <title>Make Dataset</title>
+  <style>
+      body {
+          background-color: #2A2A2AF0;
+      }
+
+      .container {
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+          justify-content: center;
+      }
+  </style>
+</head>
+<script src='https://unpkg.com/@zip.js/zip.js/dist/zip.min.js'></script>
+<script src='https://cdn.jsdelivr.net/npm/onnxruntime-web@1.16.3/dist/ort.min.js'></script>
+<script src='https://cdn.jsdelivr.net/npm/protobufjs@7.2.5/dist/minimal/protobuf.min.js'></script>
+<script src='https://cdn.jsdelivr.net/npm/jimp@0.22.10/browser/lib/jimp.min.js'></script>
+<script src='onnx.js'></script>
+<script src='constants.js'></script>
+<script src='helpers.js'></script>
+<script>
+  // ort.env.logLevel = 'verbose';
+  // ort.env.debug = true;
+  // ort.env.wasm.numThreads = 32;
+  console.log('ort =', ort);
+</script>
+<body>
+<div id='info'></div>
+<div class='container'>
+  <h3 id='title'>Make Dataset</h3>
+  <label for='modelSelect'>Model: </label><select id='modelSelect'></select>
+  <input multiple type='file' id='upload' style='margin-left: 6em;padding: 10px' />
+  <div id='progress-container' style='width: 50vw; background-color: #ddd; border-radius: 10px'>
+    <div id='progress-bar' style='width: 0; height: 20px; background-color: #4CAF50; border-radius: 10px;'></div>
+  </div>
+  <div style='padding: 10px'>
+    <button id='download'>Download .zip</button>
+  </div>
+  <div id='results'></div>
+</div>
+</body>
+<script src='main.js'></script>
+</html>
