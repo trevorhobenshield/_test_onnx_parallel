@@ -1,5 +1,5 @@
 let model, inputDims, session, counter = 1, numFiles = 0, predictions = [];
-let workers = [], N_WORKERS = 4;
+let workers = [], N_WORKERS = navigator.hardwareConcurrency || 1;
 let t0;
 
 canvas = document.createElement('canvas');
